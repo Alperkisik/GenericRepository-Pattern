@@ -33,6 +33,7 @@ namespace GenericRepository_Pattern
                 {
                     // TODO: dispose managed state (managed objects)
                     _GenericRepository_ADONET.Dispose();
+                    GenericRepository_Dapper.Dispose();
                 }
 
                 // TODO: free unmanaged resources (unmanaged objects) and override finalizer
