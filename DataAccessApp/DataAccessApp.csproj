@@ -52,5 +52,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenericRepository Pattern\GenericRepository Pattern.csproj">
+      <Project>{0776F618-8FF9-4AE0-B55E-76FC3D01173A}</Project>
+      <Name>GenericRepository Pattern</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
