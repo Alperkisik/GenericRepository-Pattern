@@ -8,7 +8,7 @@
 - Generic Stored Procedures queries generetad with pattern following that for select query "[dbo].[Sel_{TableName}]", for Count query "[dbo].[Sel_{TableName}_Count]", for Any query "[dbo].[Sel_{TableName}_Any]", for insert or update query "[dbo].[Up_{TableName}]".
 - InsertOrUpdate option returns Id back not affected query count or true,false.
 <br>
-<br>
+
 > [!NOTE]
 > - Works better if models has [Table("{Table Name}")] and their guid ids has [key] attribute
 > - Not compatible with [NotMapped] attribute on models properties
