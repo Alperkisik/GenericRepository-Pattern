@@ -10,6 +10,6 @@
 
 
 > [!NOTE]
-> Works better if models has [Table("{Table Name}")] and their guid ids has [key] attribute
-> Not compatible with [NotMapped] attribute on models properties
-> Works better with cheking data validations before using data access functions.
+> - Works better if models has [Table("{Table Name}")] and their guid ids has [key] attribute
+> - Not compatible with [NotMapped] attribute on models properties
+> - Works better with cheking data validations before using data access functions.
