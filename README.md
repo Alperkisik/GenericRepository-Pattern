@@ -9,7 +9,7 @@
 - InsertOrUpdate option returns Id back not affected query count or true,false.
 
 
-[!NOTE]
-- Works better if models has [Table("{Table Name}")] and their guid ids has [key] attribute
-- Not compatible with [NotMapped] attribute on models properties 
-- Works better with cheking data validations before using data access functions.
+> [!NOTE]
+> Works better if models has [Table("{Table Name}")] and their guid ids has [key] attribute
+> Not compatible with [NotMapped] attribute on models properties
+> Works better with cheking data validations before using data access functions.
