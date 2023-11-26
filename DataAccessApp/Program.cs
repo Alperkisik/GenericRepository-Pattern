@@ -13,7 +13,20 @@ namespace DataAccessApp
         {
             var dataAccess = new DataAccess(ConnectionString: "[Your Connection String]");
 
-            /*dataAccess.GenericRepository_ADONET.List<T>();
+            /*
+
+            var Repositories = dataAccess.RepositoryLibrary;
+
+            var ExampleModelRepository = Repositories.ExampleModels;
+            ExampleModelRepository.GetAll();
+            ExampleModelRepository.GetById(5);
+            ExampleModelRepository.RecordsByParameters(null);
+
+            */
+
+            /*
+            
+            dataAccess.GenericRepository_ADONET.List<T>();
             dataAccess.GenericRepository_ADONET.ListAsync<T>();
             dataAccess.GenericRepository_ADONET.Single<T>();
             dataAccess.GenericRepository_ADONET.SingleAsync<T>();
@@ -24,7 +37,9 @@ namespace DataAccessApp
             dataAccess.GenericRepository_ADONET.Count<T>();
             dataAccess.GenericRepository_ADONET.CountAsync<T>();
             dataAccess.GenericRepository_ADONET.InsertOrUpdate<T>();
-            dataAccess.GenericRepository_ADONET.InsertOrUpdateAsync<T>();*/
+            dataAccess.GenericRepository_ADONET.InsertOrUpdateAsync<T>();
+            
+            */
 
             Console.ReadKey();
         }

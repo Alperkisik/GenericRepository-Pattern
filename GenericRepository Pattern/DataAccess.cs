@@ -1,5 +1,5 @@
 ﻿using GenericRepository_Pattern.Interfaces;
-using GenericRepository_Pattern.Repository;
+using GenericRepository_Pattern.DataAccess_Library;
 using System;
 
 namespace GenericRepository_Pattern
@@ -11,6 +11,7 @@ namespace GenericRepository_Pattern
 
         readonly GenericRepository_ADONET _GenericRepository_ADONET;
         readonly GenericRepository_Dapper _genericRepository_Dapper;
+        readonly IRepositoryLibrary _repositoryLibrary;
 
         public DataAccess(string ConnectionString)
         {
@@ -18,12 +19,14 @@ namespace GenericRepository_Pattern
 
             _GenericRepository_ADONET = new GenericRepository_ADONET(ConnectionString);
             _genericRepository_Dapper = new GenericRepository_Dapper(ConnectionString);
+            _repositoryLibrary = new RepositoryLibrary(ConnectionString);
         }
 
         public string BaseConnectionString => _ConnectionString;
 
         public GenericRepository_ADONET GenericRepository_ADONET => _GenericRepository_ADONET;
         public GenericRepository_Dapper GenericRepository_Dapper => _genericRepository_Dapper;
+        public IRepositoryLibrary RepositoryLibrary => _repositoryLibrary;
 
         protected virtual void Dispose(bool disposing)
         {

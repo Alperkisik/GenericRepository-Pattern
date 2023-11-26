@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using GenericRepository_Pattern.Extensions;
 using GenericRepository_Pattern.Interfaces;
 
-namespace GenericRepository_Pattern.Repository
+namespace GenericRepository_Pattern.DataAccess_Library
 {
     public class GenericRepository_ADONET : IGenericRepository_ADONET, IDisposable
     {
@@ -81,15 +81,7 @@ namespace GenericRepository_Pattern.Repository
         }
         private string GetTableName<T>()
         {
-            string tableName;
-            var type = typeof(T);
-
-            tableName = type.Name;
-
-            var tableAttr = type.GetCustomAttribute<TableAttribute>();
-            if (tableAttr != null) tableName = tableAttr.Name;
-
-            return tableName;
+            return typeof(T).GetCustomAttribute<TableAttribute>() == null ? typeof(T).Name : typeof(T).GetCustomAttribute<TableAttribute>().Name;
         }
         private string GetColumns<T>(bool excludeKey = false)
         {

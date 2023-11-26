@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using GenericRepository_Pattern.Interfaces;
 using Dapper;
 
-namespace GenericRepository_Pattern.Repository
+namespace GenericRepository_Pattern.DataAccess_Library
 {
     public class GenericRepository_Dapper : IGenericRepository_Dapper, IDisposable
     {
