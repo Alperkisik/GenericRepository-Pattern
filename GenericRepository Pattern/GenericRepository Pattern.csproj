@@ -38,13 +38,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
+    <Compile Include="DataAccess Library\GenericDataAccess_ADONET.cs" />
     <Compile Include="enums.cs" />
     <Compile Include="Extensions\SqlExtensions.cs" />
-    <Compile Include="Repository\GenericRepository_ADONET.cs" />
-    <Compile Include="Repository\GenericRepository_Dapper.cs" />
+    <Compile Include="DataAccess Library\GenericRepository_ADONET.cs" />
+    <Compile Include="DataAccess Library\GenericRepository_Dapper.cs" />
     <Compile Include="Interfaces\IDataAccess.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Interfaces\IGenericDataAccess_ADONET.cs" />
     <Compile Include="Interfaces\IGenericRepository.cs" />
     <Compile Include="Interfaces\IGenericRepository_Dapper.cs" />
+    <Compile Include="Interfaces\IRepositoryLibrary.cs" />
+    <Compile Include="Interfaces\Repository\IExampleModelRepository.cs" />
+    <Compile Include="Models\Database Models\ExampleModel.cs" />
+    <Compile Include="Models\Entity.cs" />
+    <Compile Include="RepositoryLibrary.cs" />
+    <Compile Include="Repository\ExampleModelRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -54,8 +63,6 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
