@@ -136,8 +136,9 @@ namespace GenericRepository_Pattern.DataAccess_Library
 
         private string GenericQuery(CommandType commandType = CommandType.Text, QueryType queryType = QueryType.select, List<SqlParameter> parameters = null, string schema = "dbo")
         {
+            if (commandType == CommandType.StoredProcedure) return StoredProcedureFunctionName(queryType, schema);
+
             var query = "";
-            if (commandType == CommandType.StoredProcedure) query = StoredProcedureFunctionName(queryType, schema);
 
             if (queryType == QueryType.select) query = $"SELECT * FROM {schema}.[{TableName()}]";
             if (queryType == QueryType.count) query = $"SELECT COUNT(*) FROM {schema}.[{TableName()}]";
