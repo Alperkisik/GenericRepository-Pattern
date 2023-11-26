@@ -15,6 +15,11 @@ namespace GenericRepository_Pattern.Extensions
         {
             if (!reader.Read()) return default;
 
+            //if typeof(T) is a System Type such as string,int,datetime etc
+            if (typeof(T).FullName.Contains("System")) return (T)Convert.ChangeType(reader[0], typeof(T));
+
+
+            //if typeof(T) is a class or Entity
             T dataObject = GetInstance<T>();
 
             for (int i = 0; i < reader.FieldCount; i++)
@@ -32,6 +37,18 @@ namespace GenericRepository_Pattern.Extensions
         {
             var data = new List<T>();
 
+            //if typeof(T) is a System Type such as string,int,datetime etc
+            if (typeof(T).FullName.Contains("System"))
+            {
+                while (reader.Read())
+                {
+                    data.Add((T)Convert.ChangeType(reader[0], typeof(T)));
+                }
+
+                return data;
+            }
+
+            //if typeof(T) is a class or Entity
             while (reader.Read())
             {
                 T dataObject = GetInstance<T>();
