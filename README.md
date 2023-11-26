@@ -7,9 +7,10 @@
 - Generic Stored Procedures queries are generated when there is no query given in dataAccess functions.
 - Generic Stored Procedures queries generetad with pattern following that for select query "[dbo].[Sel_{TableName}]", for Count query "[dbo].[Sel_{TableName}_Count]", for Any query "[dbo].[Sel_{TableName}_Any]", for insert or update query "[dbo].[Up_{TableName}]".
 - InsertOrUpdate option returns Id back not affected query count or true,false.
+- Includes Generic Repository Pattern with ExampleModel Entity
 <br>
 
 > [!NOTE]
-> - Works better if models has [Table("{Table Name}")] and their guid ids has [key] attribute
+> - Works better if models has [Table("{Table Name}")] and their id fields has [key] attribute
 > - Not compatible with [NotMapped] attribute on models properties
 > - Works better with cheking data validations before using data access functions.
